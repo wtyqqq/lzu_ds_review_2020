@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>window对象的open、close和setTimeout方法</title>
+  </head>
+  
+  <body>
+    <p>这是当前的Web浏览器窗口！</p>
+    <script type="text/javascript">
+      newWindow=window.open("","","width=500,height=100")
+      newWindow.document.write("这是新打开的Web浏览器窗口！")
+      newWindow.document.write("这个新打开的Web浏览器窗口会在20秒钟之后自动关闭！")
+      newWindow.setTimeout("close()",20000)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>带有开始按钮和停止按钮的计数器</title>
+    <script type="text/javascript">
+        var counter;    //计数器
+        var timerID;    //定时器ID
+
+        function getReady() {
+            counter = 0;    //计数器清零（初始化）
+            document.getElementById('beginButton').disabled = false; //启用“开始计数”按钮
+            document.getElementById('stopButton').disabled = true;   //禁用“停止计数”按钮
+        }
+
+        function refreshCounter() {
+            document.getElementById('txt').value = counter; //显示计数器的最新值
+            counter++;    //更新计数器的值
+        }
+
+        function beginCount() {
+            document.getElementById('beginButton').disabled = true;  //禁用“开始计数”按钮
+            document.getElementById('stopButton').disabled = false;  //启用“停止计数”按钮
+            refreshCounter();          //显示计数器的初始值0
+            timerID = setInterval("refreshCounter()", 1000);   //设置Interval定时器
+        }
+
+        function stopCount() {
+            getReady();
+            clearInterval(timerID);      //清除Interval定时器
+        }
+    </script>
+</head>
+
+<body onload="getReady()">
+<form action="">
+    <input type="button" id="beginButton" value="开始计数" onclick="beginCount()"/>
+    <input type="text" id="txt"/>
+    <input type="button" id="stopButton" value="停止计数" onclick="stopCount()"/>
+</form>
+</body>
+</html>

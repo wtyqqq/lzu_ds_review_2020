@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>在HTML元素的开始标签中处理事件</title>
+    <script type="text/javascript">
+      function unloadEventHandler() { alert("unload事件被触发！"); }
+      function clickEventHandler() { alert("click事件被触发！"); }
+    </script>
+  </head>
+  <body onload="alert('load事件被触发！');" onunload="unloadEventHandler()">
+    <div onclick="clickEventHandler()">用鼠标单击此处</div>
+  </body> 
+</html>

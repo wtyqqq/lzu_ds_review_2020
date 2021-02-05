@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>CSS下拉菜单</title>
+    <style type="text/css">
+      #naviBar { width:315px; margin:0px auto; }
+      /* 使用ul元素定义主菜单 */
+      #naviBar ul { padding:0px; margin:0px; list-style-type:none; }
+      /* 使用li元素定义主菜单项（视频、小说、购物） */
+      #naviBar ul li { position:relative; float:left; width:104px; height:30px; border:1px solid white; border-width:1px 1px 0 0; line-height:30px; text-align:center; background-color:#cca; }
+      /* 使用ul元素定义子菜单，并隐藏子菜单 */
+      #naviBar ul li ul { display:none; }
+      /* 当鼠标滑过主菜单项时，显示子菜单、并将其绝对定位于对应的主菜单项下面 */
+      #naviBar ul li:hover ul { display:block; position:absolute; top:30px; left:0px; width:105px; }
+      /* 在子菜单项中，设置超链接文本及其背景的颜色 */
+      #naviBar a { display:block; text-decoration:none; color:olive; background-color:#fec; }
+      /* 当鼠标滑过超链接文本时，改变超链接文本及其背景的颜色 */
+      #naviBar a:hover { color: #ff0000; background-color:#dc8; }
+    </style>
+  </head>
+  
+  <body>
+    <div id="naviBar">  <!--div元素定义水平导航条-->
+      <ul>              <!--ul元素定义主菜单-->
+        <li>视频        <!--li元素定义主菜单项-->
+          <ul>          <!--ul元素定义子菜单-->
+            <li><a href="http://www.youku.com">优酷</a></li>       <!--li元素定义子菜单项-->
+            <li><a href="http://www.tudou.com">土豆</a></li>
+            <li><a href="http://www.iqiyi.com">奇艺高清</a></li>
+          </ul>
+        </li>
+        <li>小说
+          <ul>
+            <li><a href="http://www.qidian.com">起点</a></li>
+            <li><a href="http://www.hongxiu.com">红袖添香</a></li>
+            <li><a href="http://www.xxsy.com">潇湘书院</a></li>
+          </ul>
+        </li>
+        <li>购物
+          <ul>
+            <li><a href="http://www.taobao.com">淘宝</a></li>
+            <li><a href="http://www.amazon.cn">亚马逊</a></li>
+            <li><a href="http://www.360buy.com">京东商城</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

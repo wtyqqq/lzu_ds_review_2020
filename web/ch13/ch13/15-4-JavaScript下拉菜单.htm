@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>JavaScript下拉菜单</title>
+    <style type="text/css">
+      #naviBar { width:315px; margin:0px auto; }
+      /* 使用ul元素定义主菜单 */
+      #naviBar ul { padding:0px; margin:0px; list-style-type:none; }
+      /* 使用li元素定义主菜单项 */
+      #naviBar ul li { position:relative; float:left; width:104px; height:30px; border:1px solid white; border-width:1px 1px 0 0; line-height:30px; text-align:center; background-color:#cca; }
+      /* 使用ul元素定义子菜单，隐藏子菜单、但将其绝对定位于对应的主菜单项下面 */
+      #naviBar ul li ul { visibility:hidden; position:absolute; top:30px; left:0px; width:105px; }
+      /* 在子菜单项中，设置超链接文本及其背景的颜色 */
+      #naviBar a { display:block; text-decoration:none; color:olive; background-color:#fec; }
+    </style>
+    <script type="text/javascript">
+      /* 当鼠标滑过主菜单项时，显示相应的子菜单 */
+      function showSubMenu(elmntId) { document.getElementById(elmntId).style.visibility="visible"; }
+      /* 当鼠标离开主菜单项时，隐藏相应的子菜单 */
+      function hideSubMenu(elmntId) { document.getElementById(elmntId).style.visibility="hidden"; }
+      /* 当鼠标滑过超链接时，改变超链接文本及其背景的颜色 */
+      function changeLinkColor(aElement) {
+        aElement.style.color="red";
+        aElement.style.background="#dc8";
+      }
+      /* 当鼠标离开超链接时，恢复超链接文本及其背景的颜色 */
+      function recoverLinkColor(aElement) {
+        aElement.style.color="olive";
+        aElement.style.background="#fec";
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div id="naviBar">
+      <ul>
+        <li onmouseover="showSubMenu('video')" onmouseout="hideSubMenu('video')">视频
+          <ul id="video">
+            <li><a href="http://www.youku.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">优酷</a></li>
+            <li><a href="http://www.tudou.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">土豆</a></li>
+            <li><a href="http://www.iqiyi.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">奇艺高清</a></li>
+          </ul>
+        </li>
+        <li onmouseover="showSubMenu('novel')" onmouseout="hideSubMenu('novel')">小说
+          <ul id="novel">
+            <li><a href="http://www.qidian.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">起点</a></li>
+            <li><a href="http://www.hongxiu.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">红袖添香</a></li>
+            <li><a href="http://www.xxsy.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">潇湘书院</a></li>
+          </ul>
+        </li>
+        <li onmouseover="showSubMenu('shop')" onmouseout="hideSubMenu('shop')">购物
+          <ul id="shop">
+            <li><a href="http://www.taobao.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">淘宝</a></li>
+            <li><a href="http://www.amazon.cn" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">亚马逊</a></li>
+            <li><a href="http://www.360buy.com" onmouseover="changeLinkColor(this)" onmouseout="recoverLinkColor(this)">京东商城</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
